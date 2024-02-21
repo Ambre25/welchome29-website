@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style_loc.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="swiper-bundle.min.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="description" content="Tous nos biens à la location, de Morlaix à Santec en passant par Carantec, Saint-pol de léon et Roscoff">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <title>Locations</title>
+    </head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="assets/logo4.png" alt="">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="conciergerie.html">Services</a></li>
+            <li><a href="locations.html" id="active">Locations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://devis.welchome29.fr" target="_blank">Devis</a></li>
+            <li><a href="https://app.welchome29.fr" id="btn-loc" target="_blank">Boutique</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <div class="main locations"></div>
+    <div class="chips">
+        <button class="chip chip-selected" data-valeur="Tous" onclick="filtrerCards('ville', 'Tous')">Tous</button>
+        <button class="chip" data-valeur="Morlaix" data-type="ville" onclick="filtrerCards('ville', 'Morlaix')">Morlaix</button>
+        <button class="chip" data-valeur="Plougasnou" data-type="ville" onclick="filtrerCards('ville', 'Plougasnou')">Plougasnou</button>
+        <button class="chip" data-valeur="Carantec" data-type="ville" onclick="filtrerCards('ville', 'Carantec')">Carantec</button>
+        <button class="chip" data-valeur="Roscoff" data-type="ville" onclick="filtrerCards('ville', 'Roscoff')">Roscoff</button>
+        <button class="chip" data-valeur="Santec" data-type="ville" onclick="filtrerCards('ville', 'Santec')">Santec</button>
+        <button class="chip chip-logo" data-type="capacite" onclick="toggleCritere('capacite', '10')"><i class="fa-solid fa-user-group"></i><p>+10</p></button>
+        <button class="chip chip-logo" data-type="pool" onclick="toggleCritere('pool', 'Piscine')"><i class="fa-solid fa-water"></i><p>Piscine</p></button>
+        <button class="chip chip-logo" data-type="spa" onclick="toggleCritere('spa', 'Spa')"><i class="fa-solid fa-hot-tub-person"></i><p>Spa</p></button>
+        <button class="chip chip-logo" data-type="sauna" onclick="toggleCritere('sauna', 'Sauna')"><i class="fa-brands fa-hotjar"></i><p>Sauna</p></button>
+        <button class="chip chip-logo" data-type="mer" onclick="toggleCritere('mer', 'Bord de Mer')"><i class="fa-solid fa-umbrella-beach"></i><p>Bord de Mer</p></button>
+        <button class="chip chip-logo" data-type="villa" onclick="toggleCritere('villa', 'Villa')"><i class="fa-solid fa-house"></i><p>Villa</p></button>
+        <button class="chip chip-logo" data-type="appartement" onclick="toggleCritere('appartement', 'Appartement')"><i class="fa-solid fa-building"></i><p>Appartement</p></button>
+        <button class="chip chip-logo" data-type="bateau" onclick="toggleCritere('bateau', 'Bateau')"><i class="fa-solid fa-sailboat"></i><p>Bateau</p></button>
+    </div>
+    <section class="card-container">
+        <div class="city">
+            <div class="cards">
+                <div class="card" data-ville="Morlaix" data-capacite="4" data-appartement="Appartement">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/morlaix-cecillon-slider.jpg" alt="Ty an Arzou">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Tyanarzou/tyanarzou2.jpg" alt="Ty an Arzou">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Tyanarzou/tyanarzou3.jpg" alt="Ty an Arzou">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Tyanarzou/tyanarzou4.jpg" alt="Ty an Arzou">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Tyanarzou/tyanarzou5.jpg" alt="Ty an Arzou">
+                        </div>
+                    </div>
+                    <h3>Ty an Arzou</h3>
+                    <h6>Morlaix | 4 Personnes</h6>
+                    <p class="description">Appartement calme et élégant situé au 3ème et dernier étage.</p>
+                    <div class="links">
+                        <a href="https://www.airbnb.fr/rooms/53948950?source_impression_id=p3_1695306684_yQO9EDfqX0k5HQ8J" title="Airbnb" target="_blank">
+                            <i class="fa-brands fa-airbnb"></i>
+                        </a>
+                        <a href="https://www.booking.com/hotel/fr/ty-an-arzou-appartement-calme-amp-chaleureux.fr.html" title="Booking" target="_blank">
+                            <i class="fa-solid fa-b"></i>
+                        </a>
+                        <a href="https://www.google.com.my/travel/hotels/entity/ChoQgbGCnNygzbaZARoNL2cvMTF2a3piZDc0MhAC?ap=MAA&ts=CAEaSQopEiUKCi9tLzAzcWY3MzE6F1NhaW50LU1hcnRpbi1EZXMtQ2hhbXBzGgASHBIUCgcI6A8QARgdEgcI6A8QAhgFGAcyAhAAOAEqCQoFOgNVU0QaAA&qs=MiRDaGNJeHBPODhmQ3h1NnRuR2dzdlp5OHhkbWR4WTJneGVoQUI4BA&ei=i2hgZa3hFvCPrcUPr4GskAk&sa=X&utm_campaign=sharing&utm_medium=link&utm_source=htls&ved=0CAAQ5JsGahcKEwjQlo2JvYeEAxUAAAAAHQAAAAAQAw" title="Google Vacation" target="_blank">
+                            <i class="fa-brands fa-google"></i>
+                        </a>
+                        <a href="https://welc-home.lodgify.com/fr/ty-an-arzou---appartement-calme-amp-chaleureux" title="En direct" target="_blank">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" data-ville="Morlaix" data-capacite="2" data-sauna="Sauna" data-appartement="Appartement">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/morlaix-bienetre-slider.jpg" alt="Ô Bien Être">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Bienetre/bienetre2.jpg" alt="Ô Bien Être">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Bienetre/bienetre3.jpg" alt="Ô Bien Être">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Bienetre/bienetre4.jpg" alt="Ô Bien Être">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Bienetre/bienetre5.jpg" alt="Ô Bien Être">
+                        </div>
+                    </div>
+                    <h3>Ô Bien-Être</h3>
+                    <h6>Morlaix | 2 Personnes</h6>
+                    <p class="description">Appartement d'exception équipé d'un sauna.</p>
+                    <div class="links">
+                        <a href="https://fr.airbnb.ca/rooms/1036147223837521376?source_impression_id=p3_1706532367_E8a0iLrZoar6yR3L" title="Airbnb" target="_blank">
+                            <i class="fa-brands fa-airbnb"></i>
+                        </a>
+                        <a href="https://www.booking.com/hotel/fr/o-bien-etre.fr.html" title="Booking" target="_blank">
+                            <i class="fa-solid fa-b"></i>
+                        </a>
+                        <a href="https://welc-home.lodgify.com/fr/o-bien-etre" title="En direct" target="_blank">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" data-ville="Morlaix" data-capacite="4">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/morlaix-jousse-slider.jpg" alt="Les Hauts de Morlaix">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Hautsdemorlaix/jousse2.jpg" alt="Les Hauts de Morlaix">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Hautsdemorlaix/jousse3.jpg" alt="Les Hauts de Morlaix">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Hautsdemorlaix/jousse4.jpg" alt="Les Hauts de Morlaix">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Hautsdemorlaix/jousse5.jpg" alt="Les Hauts de Morlaix">
+                        </div>
+                    </div>
+                    <h3>Les Hauts de Morlaix</h3>
+                    <h6>Morlaix | 4 Personnes</h6>
+                    <p class="description">Maison atypique nichée sur les hauteurs historiques de Morlaix.</p>
+                    <div class="links">
+                        <a href="https://www.airbnb.fr/rooms/1046857702726426122?_set_bev_on_new_domain=1695280971_NTFhOGJlNDgwZjRj&source_impression_id=p3_1706604110_gaLrhB4p85YrLeJK" title="Airbnb" target="_blank">
+                            <i class="fa-brands fa-airbnb"></i>
+                        </a>
+                        <a href="https://www.booking.com/hotel/fr/les-hauts-de-morlaix.fr.html" title="Booking" target="_blank">
+                            <i class="fa-solid fa-b"></i>
+                        </a>
+                        <a href="https://welc-home.lodgify.com/fr/les-hauts-de-morlaix" title="En direct" target="_blank">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" data-ville="Morlaix" data-capacite="8">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/morlaix-lefeuvre-slider.jpg" alt="L'île aux Dames">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Ileauxdames/lefeuvre2.jpg" alt="L'île aux Dames">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Ileauxdames/lefeuvre3.jpg" alt="L'île aux Dames">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Ileauxdames/lefeuvre4.jpg" alt="L'île aux Dames">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Ileauxdames/lefeuvre5.jpg" alt="L'île aux Dames">
+                        </div>
+                    </div>
+                    <h3>L'île aux Dames</h3>
+                    <h6>Morlaix | 8 Personnes</h6>
+                    <p class="description">Maison calme et confortable située sur les hauteurs de Morlaix.</p>
+                    <div class="links">
+                        <a href="https://www.airbnb.fr/rooms/991022462046787676?adults=5&check_in=2023-10-27&check_out=2023-11-03&source_impression_id=p3_1697619003_K8kVVuLg2Mt9f11R&previous_page_section_name=1000&federated_search_id=04f2d8be-3d95-48a1-af34-4e9c13d4cabc" title="Airbnb" target="_blank">
+                            <i class="fa-brands fa-airbnb"></i>
+                        </a>
+                        <a href="https://www.booking.com/hotel/fr/ile-aux-dames.fr.html" title="Booking" target="_blank">
+                            <i class="fa-solid fa-b"></i>
+                        </a>
+                        <a href="https://www.abritel.fr/location-vacances/p2312324?chkin=2024-04-02&chkout=2024-04-12&d1=2024-04-02&d2=2024-04-12&startDate=2024-04-02&endDate=2024-04-12&x_pwa=1&rfrr=HSR&pwa_ts=1706692034788&referrerUrl=aHR0cHM6Ly93d3cuYWJyaXRlbC5mci9Ib3RlbC1TZWFyY2g%3D&useRewards=true&adults=5&regionId=8871&destination=Morlaix%2C+D%C3%A9partement+du+Finist%C3%A8re%2C+France&destType=MARKET&latLong=48.577606%2C-3.82823&privacyTrackingState=CAN_TRACK&searchId=7f8f6efa-2615-4f6b-bc06-2c15252fa990&sort=RECOMMENDED&top_dp=1270&top_cur=EUR&userIntent=&selectedRoomType=99474615&selectedRatePlan=0003e03f43e13a1940029623d906fd798d7b&expediaPropertyId=99474615" title="Abritel" target="_blank">
+                            <i class="fa-solid fa-house"></i>
+                        </a>
+                        <a href="https://www.google.com/travel/hotels/entity/CgsQz-3hh-DlzbGfARAC/overview?utm_campaign=sharing&utm_medium=link&utm_source=htls&ved=0CAAQ5JsGahcKEwjYlJSkvoeEAxUAAAAAHQAAAAAQAw&ts=CAEaIAoCGgASGhIUCgcI6A8QAxgYEgcI6A8QAxgcGAQyAhAAKgkKBToDRVVSGgA" title="Google Vacation" target="_blank">
+                            <i class="fa-brands fa-google"></i>
+                        </a>
+                        <a href="https://welc-home.lodgify.com/fr/lile-aux-dames---sur-les-hauteurs-de-morlaix" title="En direct" target="_blank">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" data-ville="Morlaix" data-capacite="4" data-appartement="Appartement">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/morlaix-harry-slider.jpg" alt="Le Repaire des Sorciers">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Repaire/harry2.jpg" alt="Le Repaire des Sorciers">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Repaire/harry3.jpg" alt="Le Repaire des Sorciers">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Repaire/harry4.jpg" alt="Le Repaire des Sorciers">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Repaire/harry5.jpg" alt="Le Repaire des Sorciers">
+                        </div>
+                    </div>
+                    <h3>Le Repaire des Sorciers</h3>
+                    <h6>Morlaix | 4 Personnes</h6>
+                    <p class="description">Appartement ensorcelant recréant l'univers féérique d'Harry Potter.</p>
+                    <div class="links">
+                        <a href="https://www.airbnb.fr/rooms/1035987152876108397?_set_bev_on_new_domain=1695280971_NTFhOGJlNDgwZjRj&source_impression_id=p3_1706533143_hPqCIWG7yZYrbwri" title="Airbnb" target="_blank">
+                            <i class="fa-brands fa-airbnb"></i>
+                        </a>
+                        <a href="https://www.booking.com/hotel/fr/le-repaire-des-sorciers.fr.html" title="Booking" target="_blank">
+                            <i class="fa-solid fa-b"></i>
+                        </a>
+                        <a href="https://welc-home.lodgify.com/fr/le-repaire-des-sorciers" title="En direct" target="_blank">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" data-ville="Morlaix" data-capacite="2" data-appartement="Appartement">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/morlaix-breizh-slider.jpg" alt="Breizh Appart">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Breizh/breizh2.jpg" alt="Breizh Appart">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Breizh/breizh3.jpg" alt="Breizh Appart">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Breizh/breizh4.jpg" alt="Breizh Appart">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Breizh/breizh5.jpg" alt="Breizh Appart">
+                        </div>
+                    </div>
+                    <h3>Breizh Appart</h3>
+                    <h6>Morlaix | 2 Personnes</h6>
+                    <p class="description">Appartement breton en hypercentre à 500m de la gare.</p>
+                    <div class="links">
+                        <a href="https://www.airbnb.fr/rooms/1031792236676848480?_set_bev_on_new_domain=1695280971_NTFhOGJlNDgwZjRj&source_impression_id=p3_1706533509_L5RNo05HoPcQ8U3V" title="Airbnb" target="_blank">
+                            <i class="fa-brands fa-airbnb"></i>
+                        </a>
+                        <a href="https://www.booking.com/hotel/fr/breizh-appart.fr.html" title="Booking" target="_blank">
+                            <i class="fa-solid fa-b"></i>
+                        </a>
+                        <a href="https://welc-home.lodgify.com/fr/breizh-appart" title="En direct" target="_blank">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" data-ville="Morlaix" data-capacite="6">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/morlaix-jardinbleu-slider.jpg" alt="Jardin Bleu">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Jardinbleu/coat-1.jpeg" alt="Jardin Bleu">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Jardinbleu/coat-2.jpeg" alt="Jardin Bleu">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Jardinbleu/coat-3.jpeg" alt="Jardin Bleu">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Jardinbleu/coat-4.jpeg" alt="Jardin Bleu">
+                        </div>
+                    </div>
+                    <h3>Le Jardin Bleu</h3>
+                    <h6>Morlaix | 6 Personnes</h6>
+                    <p class="description">Maison familiale à quelques pas du centre ville.</p>
+                    <div class="links">
+                        <a href="https://www.airbnb.fr/rooms/49763705?_set_bev_on_new_domain=1695280971_NTFhOGJlNDgwZjRj&source_impression_id=p3_1706692205_IWwmCKY7djkrQaIq" title="Airbnb" target="_blank">
+                            <i class="fa-brands fa-airbnb"></i>
+                        </a>
+                        <a href="#" title="En direct" class="open-contact-form" data-property="Le Jardin Bleu">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" data-ville="Morlaix" data-capacite="6">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/morlaix-longere-slider.jpg" alt="Hon Neizig">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Honneizig/longere1.jpeg" alt="Hon Neizig">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Honneizig/longere2.jpeg" alt="Hon Neizig">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Honneizig/longere3.jpeg" alt="Hon Neizig">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Honneizig/longere4.jpeg" alt="Hon Neizig">
+                        </div>
+                    </div>
+                    <h3>Hon Neizig</h3>
+                    <h6>Morlaix | 6 Personnes</h6>
+                    <p class="description">Jolie longère rénovée entièrement dans un quartier calme.</p>
+                    <div class="links">
+                        <a href="https://www.airbnb.fr/rooms/561230540618330537?adults=4&check_in=2024-07-13&check_out=2024-07-20&source_impression_id=p3_1706697319_mNOYQl%2FlyA55BwlZ&previous_page_section_name=1000&federated_search_id=413c093a-da5c-4797-8d08-1cfc18b63156" title="Airbnb" target="_blank">
+                            <i class="fa-brands fa-airbnb"></i>
+                        </a>
+                        <a href="https://www.abritel.fr/location-vacances/p2100294?adultsCount=14&fbclid=IwAR0jo1XjE1TQUIPNUtwHi4BUlOUdgm-3cK8Iq2a50tDh1aVQDE5qF7IAXr0&noDates=true&uni_id=2276212" title="Abritel" target="_blank">
+                            <i class="fa-solid fa-house"></i>
+                        </a>
+                        <a href="#" title="En direct" class="open-contact-form" data-property="Hon Neizig">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" data-ville="Morlaix" data-capacite="8" data-pool="Piscine" data-spa="Spa" data-villa="Villa">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/morlaix-chain-slider.jpg" alt="Saint Kirio">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Kirio/kirio2.jpg" alt="Saint Kirio">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Kirio/kirio3.jpg" alt="Saint Kirio">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Kirio/kirio4.jpg" alt="Saint Kirio">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Kirio/kirio5.jpg" alt="Saint Kirio">
+                        </div>
+                    </div>
+                    <h3>Saint Kirio</h3>
+                    <h6>Morlaix | 8 Personnes</h6>
+                    <p class="description">Villa traditionnelle avec piscine, spa et un immense jardin.</p>
+                    <div class="links">
+                        <a href="https://www.airbnb.fr/rooms/50068673?adults=1&children=0&enable_m3_private_room=true&infants=0&location=Ploujean%2C%20Morlaix%2C%20France&pets=0&check_in=2024-04-01&check_out=2024-04-06&source_impression_id=p3_1706878376_iHtGOqtOz4qhDm10&previous_page_section_name=1001&federated_search_id=e7aeb3ea-bf36-4531-a0f2-83d77be63448" title="Airbnb" target="_blank">
+                            <i class="fa-brands fa-airbnb"></i>
+                        </a>
+                        <a href="https://www.booking.com/hotel/fr/villa-saint-kirio-piscine-et-spa.fr.html" title="Booking" target="_blank">
+                            <i class="fa-solid fa-b"></i>
+                        </a>
+                        <a href="https://www.abritel.fr/location-vacances/p2230822?chkin=2024-05-15&chkout=2024-05-22&d1=2024-05-15&d2=2024-05-22&startDate=2024-05-15&endDate=2024-05-22&x_pwa=1&rfrr=HSR&pwa_ts=1706697917562&referrerUrl=aHR0cHM6Ly93d3cuYWJyaXRlbC5mci9Ib3RlbC1TZWFyY2g%3D&useRewards=true&adults=6&regionId=8871&destination=Morlaix%2C+D%C3%A9partement+du+Finist%C3%A8re%2C+France&destType=BOUNDING_BOX&latLong=48.61137%2C-3.83505&privacyTrackingState=CAN_TRACK&searchId=e36757c5-cbe3-40cb-a780-8f5b9ba02e72&sort=RECOMMENDED&top_dp=2309&top_cur=EUR&userIntent=&selectedRoomType=92143317&selectedRatePlan=00030999eb3a045c40ab841fe47e22c71dad&expediaPropertyId=92143317" title="Abritel" target="_blank">
+                            <i class="fa-solid fa-house"></i>
+                        </a>
+                        <a href="#" title="En direct" class="open-contact-form" data-property="Saint Kirio">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" data-ville="Morlaix" data-capacite="4">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/morlaix-villeneuve.jpg" alt="Les Voiles de Morlaix">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Villeneuve/villeneuve2.jpeg" alt="Les Voiles de Morlaix">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Villeneuve/villeneuve3.jpeg" alt="Les Voiles de Morlaix">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Villeneuve/villeneuve4.jpeg" alt="Les Voiles de Morlaix">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Villeneuve/villeneuve5.jpg" alt="Les Voiles de Morlaix">
+                        </div>
+                    </div>
+                    <h3>Les Voiles de Morlaix</h3>
+                    <h6>Morlaix | 4 Personnes</h6>
+                    <p class="description">Maison calme à deux pas du port et du centre ville.</p>
+                    <div class="links">
+                        <a href="https://www.airbnb.fr/rooms/7770567?source_impression_id=p3_1706698183_nSQrQhPxj7LV9x0u" title="Airbnb" target="_blank">
+                            <i class="fa-brands fa-airbnb"></i>
+                        </a>
+                        <a href="https://www.abritel.fr/location-vacances/p1938344" title="Abritel" target="_blank">
+                            <i class="fa-solid fa-house"></i>
+                        </a>
+                        <a href="#" title="En direct" class="open-contact-form" data-property="Les voiles de Morlaix">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" data-ville="Morlaix" data-capacite="4">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/morlaix-lampadaire-slider.jpg" alt="Les 100 Marches">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Lampadaire/lampadaire2.jpg" alt="Les 100 Marches">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Lampadaire/lampadaire3.jpg" alt="Les 100 Marches">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Lampadaire/lampadaire4.jpg" alt="Les 100 Marches">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Lampadaire/lampadaire5.jpg" alt="Les 100 Marches">
+                        </div>
+                    </div>
+                    <h3>Les 100 Marches</h3>
+                    <h6>Morlaix | 4 Personnes</h6>
+                    <p class="description">Maison en duplex à deux pas de la gare et du centre ville.</p>
+                    <div class="links">
+                        <a href="https://www.airbnb.fr/rooms/683148802599592655?source_impression_id=p3_1706698558_V5R3DiPcQvELrjmV" title="Airbnb" target="_blank">
+                            <i class="fa-brands fa-airbnb"></i>
+                        </a>
+                        <a href="https://www.booking.com/hotel/fr/le-lampadaire-gare-de-morlaix.fr.html" title="Booking" target="_blank">
+                            <i class="fa-solid fa-b"></i>
+                        </a>
+                        <a href="#" title="En direct" class="open-contact-form" data-property="Les 100 Marches">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" data-ville="Plougasnou" data-capacite="16">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/plougasnou-grandker-slider.jpg" alt="Le Grand Ker">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/GrandKer/grandker2.jpg" alt="Le Grand Ker">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/GrandKer/grandker3.jpg" alt="Le Grand Ker">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/GrandKer/grandker4.jpg" alt="Le Grand Ker">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/GrandKer/grandker5.jpg" alt="Le Grand Ker">
+                        </div>
+                    </div>
+                    <h3>Le Grand Ker</h3>
+                    <h6>Plougasnou | 16 Personnes</h6>
+                    <p class="description">Gîte de caractère dans un hameau paisible.</p>
+                    <div class="links">
+                        <a href="https://www.airbnb.fr/rooms/1060278423214971766?_set_bev_on_new_domain=1695280971_NTFhOGJlNDgwZjRj&source_impression_id=p3_1706608802_l9Ng7boOaOP%2B3R15" title="Airbnb" target="_blank">
+                            <i class="fa-brands fa-airbnb"></i>
+                        </a>
+                        <a href="https://welc-home.lodgify.com/fr/le-grand-ker---gite-de-charme" title="En direct" target="_blank">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" data-ville="Carantec" data-capacite="16" data-mer="Bord de Mer" data-villa="Villa">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/carantec-garros-slider.jpg" alt="Le Garros">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Garros/garros2.jpg" alt="Le Garros">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Garros/garros3.jpeg" alt="Le Garros">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Garros/garros4.jpeg" alt="Le Garros">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Garros/garros5.jpg" alt="Le Garros">
+                        </div>
+                    </div>
+                    <h3>Le Garros</h3>
+                    <h6>Carantec | 16 Personnes</h6>
+                    <p class="description">Grande maison neuve à deux pas des plages du Kelenn et du Clouët.</p>
+                    <div class="links">
+                        <a href="https://www.airbnb.fr/rooms/12487683?adults=8&children=8&check_in=2024-04-20&check_out=2024-04-27&source_impression_id=p3_1706699921_5cGicpsLXHhTRL0q&previous_page_section_name=1000&federated_search_id=e6fc7639-4b29-4db4-a2c4-9bdfb05bb3ad" title="Airbnb" target="_blank">
+                            <i class="fa-brands fa-airbnb"></i>
+                        </a>
+                        <a href="https://www.abritel.fr/location-vacances/p2129231" title="Abritel" target="_blank">
+                            <i class="fa-solid fa-house"></i>
+                        </a>
+                        <a href="https://legarros.fr/" title="En direct" target="_blank">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" data-ville="Carantec" data-capacite="13" data-mer="Bord de Mer" data-villa="Villa">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/carantec-kelenn-slider.jpg" alt="Kelenn">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Kelenn/kelenn2.jpg" alt="Kelenn">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Kelenn/kelenn3.jpeg" alt="Kelenn">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Kelenn/kelenn4.jpeg" alt="Kelenn">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Kelenn/kelenn5.jpg" alt="Kelenn">
+                        </div>
+                    </div>
+                    <h3>Kelenn</h3>
+                    <h6>Carantec | 13 Personnes</h6>
+                    <p class="description">Jolie villa avec une vue splendide sur la mer.</p>
+                    <div class="links">
+                        <a href="https://www.airbnb.fr/rooms/4482944?adults=8&location=Carantec%2C%20France&check_in=2024-05-15&check_out=2024-05-22&source_impression_id=p3_1706700275_3gniOr8PzId6seCh&previous_page_section_name=1001&federated_search_id=e4660da3-6809-4858-bc06-29ce42e0b6f5" title="Airbnb" target="_blank">
+                            <i class="fa-brands fa-airbnb"></i>
+                        </a>
+                        <a href="https://www.abritel.fr/location-vacances/p1445347a" title="Abritel" target="_blank">
+                            <i class="fa-solid fa-house"></i>
+                        </a>
+                        <a href="#" title="En direct" class="open-contact-form" data-property="Kelenn">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" data-ville="Carantec" data-capacite="11" data-spa="Spa" data-mer="Bord de Mer" data-villa="Villa">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/carantec-kerdanet-slider.jpg" alt="Kerdanet">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Kerdanet/kerdanet2.jpeg" alt="Kerdanet">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Kerdanet/kerdanet3.jpeg" alt="Kerdanet">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Kerdanet/kerdanet4.jpeg" alt="Kerdanet">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Kerdanet/kerdanet5.jpeg" alt="Kerdanet">
+                        </div>
+                    </div>
+                    <h3>Kerdanet</h3>
+                    <h6>Carantec | 11 Personnes</h6>
+                    <p class="description">Villa neuve dans un quartier calme avec vue mer et spa.</p>
+                    <div class="links">
+                        <a href="https://www.airbnb.fr/rooms/43363572?source_impression_id=p3_1706700506_QeZ6OGjcg9B5lGUe" title="Airbnb" target="_blank">
+                            <i class="fa-brands fa-airbnb"></i>
+                        </a>
+                        <a href="https://www.abritel.fr/location-vacances/p1911526" title="Abritel" target="_blank">
+                            <i class="fa-solid fa-house"></i>
+                        </a>
+                        <a href="#" title="En direct" class="open-contact-form" data-property="Kerdanet">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card"  data-ville="Carantec" data-capacite="14" data-mer="Bord de Mer">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/carantec-rozavel-slider.jpg" alt="Roz Avel">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Roz Avel/rozavel2.jpg" alt="Roz Avel">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Roz Avel/rozavel3.jpg" alt="Roz Avel">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Roz Avel/rozavel4.jpg" alt="Roz Avel">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Roz Avel/rozavel5.jpg" alt="Roz Avel">
+                        </div>
+                    </div>
+                    <h3>Roz Avel</h3>
+                    <h6>Carantec | 14 Personnes</h6>
+                    <p class="description">Maison familiale avec une vue incroyable sur la mer.</p>
+                    <div class="links">
+                        <a href="https://www.airbnb.fr/rooms/17606916?adults=8&children=0&enable_m3_private_room=true&infants=0&pets=0&check_in=2024-02-01&check_out=2024-02-06&source_impression_id=p3_1706700826_GqEB7NUeygnegbeB&previous_page_section_name=1000&federated_search_id=ce1c2f78-d22e-4ad5-807b-e75d0687e897" title="Airbnb" target="_blank">
+                            <i class="fa-brands fa-airbnb"></i>
+                        </a>
+                        <a href="https://www.abritel.fr/location-vacances/p1523755" title="Abritel" target="_blank">
+                            <i class="fa-solid fa-house"></i>
+                        </a>
+                        <a href="#" title="En direct" class="open-contact-form" data-property="Roz Avel">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card"  data-ville="Carantec" data-capacite="18" data-mer="Bord de Mer">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/carantec-rozarvor-slider.jpg" alt="Roz Arvor">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Rozarvor/rozarvor2.jpg" alt="Roz Arvor">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Rozarvor/rozarvor3.jpg" alt="Roz Arvor">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Rozarvor/rozarvor4.jpg" alt="Roz Arvor">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Rozarvor/rozarvor5.jpg" alt="Roz Arvor">
+                        </div>
+                    </div>
+                    <h3>Roz Arvor</h3>
+                    <h6>Carantec | 18 Personnes</h6>
+                    <p class="description">Grande maison de 280m² avec une vue imprenable sur la mer.</p>
+                    <div class="links">
+                        <a href="https://www.grandsgites.com/gite-29-roz-ar-vor-6143.htm" title="Gîtes" target="_blank">
+                            <i class="fa-solid fa-chess-rook"></i>
+                        </a>
+                        <a href="#" title="En direct" class="open-contact-form" data-property="Roz Arvor">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card"  data-ville="Carantec" data-capacite="4">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/carantec-pecheur-slider.jpg" alt="Pêcheur">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Pecheur/pecheur2.jpg" alt="Pêcheur">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Pecheur/pecheur3.jpg" alt="Pêcheur">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Pecheur/pecheur4.jpg" alt="Pêcheur">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Pecheur/pecheur5.jpg" alt="Pêcheur">
+                        </div>
+                    </div>
+                    <h3>Pêcheur</h3>
+                    <h6>Carantec | 4 Personnes</h6>
+                    <p class="description">Maison de pêcheur entièrement rénovée dans un quartier calme.</p>
+                    <div class="links">
+                        <a href="https://www.abritel.fr/location-vacances/p1666519?adultsCount=14&noDates=true" title="Abritel" target="_blank">
+                            <i class="fa-solid fa-house"></i>
+                        </a>
+                        <a href="#" title="En direct" class="open-contact-form" data-property="Pêcheur">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card"  data-ville="Carantec" data-capacite="4" data-mer="Bord de Mer" data-appartement="Appartement">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/carantec-porspol-slider.jpg" alt="Porspol">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Porspol/porspol2.jpg" alt="Porspol">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Porspol/porspol3.jpg" alt="Porspol">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Porspol/porspol4.jpg" alt="Porspol">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Porspol/porspol5.jpg" alt="Porspol">
+                        </div>
+                    </div>
+                    <h3>Porspol</h3>
+                    <h6>Carantec | 4 Personnes</h6>
+                    <p class="description">Appartement pour quatre avec vue mer à côté des plages.</p>
+                    <div class="links">
+                        <a href="https://www.airbnb.fr/rooms/51514209?source_impression_id=p3_1656316890_u5ZvMfBW%2ByxJjhZW" title="Airbnb" target="_blank">
+                            <i class="fa-brands fa-airbnb"></i>
+                        </a>
+                        <a href="#" title="En direct" class="open-contact-form" data-property="Porspol">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card"  data-ville="Carantec" data-capacite="4" data-appartement="Appartement">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/carantec-rodrigues-slider.jpg" alt="Ar Kreizh">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Arkreizh/arkreizh2.jpg" alt="Ar Kreizh">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Arkreizh/arkreizh3.jpg" alt="Ar Kreizh">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Arkreizh/arkreizh4.jpg" alt="Ar Kreizh">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Arkreizh/arkreizh5.jpg" alt="Ar Kreizh">
+                        </div>
+                    </div>
+                    <h3>Ar Kreizh</h3>
+                    <h6>Carantec | 4 Personnes</h6>
+                    <p class="description">Charmant studio en hypercentre avec vue mer traversante</p>
+                    <div class="links">
+                        <a href="https://www.airbnb.fr/rooms/28144475?adults=2&location=Carantec&check_in=2023-10-28&check_out=2023-11-04&source_impression_id=p3_1697618025_kBS4z6TH67tbG1R0&previous_page_section_name=1001&federated_search_id=15d29cc3-588a-4e3f-a717-3f776cba57b1" title="Airbnb" target="_blank">
+                            <i class="fa-brands fa-airbnb"></i>
+                        </a>
+                        <a href="#" title="En direct" class="open-contact-form" data-property="Ar Kreizh">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" data-ville="Roscoff" data-capacite="12" data-pool="Piscine" data-mer="Bord de Mer" data-villa="Villa">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/roscoff-vdb-slider.jpg" alt="Cornic">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Vdb/vdb2.jpg" alt="Cornic">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Vdb/vdb3.jpg" alt="Cornic">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Vdb/vdb4.jpg" alt="Cornic">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Vdb/vdb5.jpg" alt="Cornic">
+                        </div>
+                    </div>
+                    <h3>Cornic</h3>
+                    <h6>Roscoff | 12 Personnes</h6>
+                    <p class="description">Villa récente avec piscine intérieure chauffée.</p>
+                    <div class="links">
+                        <a href="https://www.airbnb.fr/rooms/42126076?adults=6&children=0&enable_m3_private_room=true&infants=0&location=roscoff&pets=0&check_in=2024-02-01&check_out=2024-02-06&source_impression_id=p3_1706702406_htKdmV449IyIIqtO&previous_page_section_name=1001&federated_search_id=e59203cc-dc0e-4b4e-b467-c9e3a64aab16" title="Airbnb" target="_blank">
+                            <i class="fa-brands fa-airbnb"></i>
+                        </a>
+                        <a href="#" title="En direct" class="open-contact-form" data-property="Cornic">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" data-ville="Roscoff" data-capacite="12" data-pool="Piscine" data-mer="Bord de Mer" data-villa="Villa">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/roscoff-surcouf-slider.jpg" alt="Surcouf">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Vdb/vdb6.jpg" alt="Surcouf">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Vdb/vdb7.jpg" alt="Surcouf">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Vdb/vdb8.jpg" alt="Surcouf">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Vdb/vdb9.jpg" alt="Surcouf">
+                        </div>
+                    </div>
+                    <h3>Surcouf</h3>
+                    <h6>Roscoff | 12 Personnes</h6>
+                    <p class="description">Villa récente avec piscine intérieure chauffée.</p>
+                    <div class="links">
+                        <a href="https://www.airbnb.fr/rooms/41705717?adults=1&children=0&enable_m3_private_room=true&infants=0&location=roscoff&pets=0&check_in=2024-02-02&check_out=2024-02-07&source_impression_id=p3_1706702940_i%2Fv7L6BIvoWuKKwf&previous_page_section_name=1001&federated_search_id=0f253a16-892e-479e-9b9f-b8f4d6c15ede" title="Airbnb" target="_blank">
+                            <i class="fa-brands fa-airbnb"></i>
+                        </a>
+                        <a href="#" title="En direct" class="open-contact-form" data-property="Surcouf">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" data-ville="Roscoff" data-capacite="10" data-pool="Piscine" data-mer="Bord de Mer" data-villa="Villa">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/roscoff-kergaro-slider.jpg" alt="Kergaro">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Kergaro/kergaro2.jpg" alt="Kergaro">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Kergaro/kergaro3.jpg" alt="Kergaro">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Kergaro/kergaro4.jpg" alt="Kergaro">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Kergaro/kergaro5.jpg" alt="Kergaro">
+                        </div>
+                    </div>
+                    <h3>Kergaro</h3>
+                    <h6>Roscoff | 10 Personnes</h6>
+                    <p class="description">Villa d'architecte avec piscine extérieure chauffée.</p>
+                    <div class="links">
+                        <a href="https://www.abritel.fr/location-vacances/p2086840" title="Abritel" target="_blank">
+                            <i class="fa-solid fa-house"></i>
+                        </a>
+                        <a href="#" title="En direct" class="open-contact-form" data-property="Kergaro">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" data-ville="Roscoff" data-capacite="4" data-mer="Bord de Mer" data-bateau="Bateau">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/roscoff-voilier-slider.jpg" alt="Le Voilier d'Antoine">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Voilier/voilier2.jpg" alt="Le Voilier d'Antoine">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Voilier/voilier3.jpg" alt="Le Voilier d'Antoine">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Voilier/voilier4.jpg" alt="Le Voilier d'Antoine">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Voilier/voilier5.jpg" alt="Le Voilier d'Antoine">
+                        </div>
+                    </div>
+                    <h3>Le Voilier d'Antoine</h3>
+                    <h6>Roscoff | 4 Personnes</h6>
+                    <p class="description">Superbe voilier de 11m amarré à Bloscon. Nuit insolite assurée !</p>
+                    <div class="links">
+                        <a href="https://www.booking.com/hotel/fr/location-unique-le-bateau-d-antoine-a-roscoff.fr.html" title="Booking" target="_blank">
+                            <i class="fa-solid fa-b"></i>
+                        </a>
+                        <a href="https://welc-home.lodgify.com/fr/le-voilier-dantoine" title="En direct" target="_blank">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" data-ville="Santec" data-capacite="6" data-sauna="Sauna">
+                    <div class="image-slider">
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                        <div class="slide">
+                            <img src="assets/santec-lenn-slider.jpg" alt="Lenn Ar Barrez">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Lennarbarrez/lennarbarrez2.jpg" alt="Kergaro">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Lennarbarrez/lennarbarrez3.jpg" alt="Kergaro">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Lennarbarrez/lennarbarrez4.jpg" alt="Kergaro">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/Lennarbarrez/lennarbarrez5.jpg" alt="Kergaro">
+                        </div>
+                    </div>
+                    <h3>Lenn Ar Barrez</h3>
+                    <h6>Santec | 6 Personnes</h6>
+                    <p class="description">Ancienne ferme rénovée en 2016 à 300m de la plage.</p>
+                    <div class="links">
+                        <a href="https://lennarbarrez.webnode.page/" title="En direct" target="_blank">
+                            <i class="fa-solid fa-cube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="alertMessage" id="aucunBienDispo" style="display: none;"><strong>Désolé...</strong> Aucun bien ne correspond à votre sélection pour le moment.</div>
+        </div>
+    </section>
+    <div class="modal" id="contactFormModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modalTitle">Location - </h2>
+            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" id="propertyNameField" name="Nom de la propriété" required>
+                <input type="text" id="userName" name="Nom" placeholder="Nom" required>
+                <input type="tel" id="userPhone" name="Téléphone" placeholder="Téléphone" required>
+                <input type="number" id="adultCount" name="Adultes" placeholder="Nombre d'adultes" required>
+                <input type="number" id="childrenCount" name="Enfants" placeholder="Nombre d'enfants" required>
+                <input type="text" id="arrivalDate" name="Date d'arrivée" placeholder="Date d'arrivée" required>
+                <input type="text" id="departureDate" name="Date de départ" placeholder="Date de départ" required>
+                <input type="hidden" name="access_key" value="a651de14-f44b-4164-99cc-3b88afa32db3">
+                <input type="hidden" name="redirect" value="https://welchome29.fr/thanks_loc.html">
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </div>
+    <hr class="mid-divider">
+    <footer>
+        <div class="footer-left">
+            <img src="assets/logo4.png" alt="">
+            <p>Un service de <strong>conciergerie premium</strong> qui vous garantit <strong>bénéfices</strong>, <strong>tranquilité</strong> et <strong>confiance</strong>.</p>
+        </div>
+        <hr class="footer-divider">
+        <div class="footer-right">
+            <div class="contact">
+                <h2>Contact</h2>
+                <p>06 58 72 43 32</p>
+                <p>contact.welchome29@gmail.com</p>
+            </div>
+            <div class="about">
+                <h2>À propos</h2>
+                <a href="https://goo.gl/maps/sWgvkyJqnscrkSKB6" target="_blank"><p>Google Business</p></a>
+            </div>
+            <div class="social">
+                <h2>Suivez Nous</h2>
+                <div class="social-ico">
+                    <a href="https://www.facebook.com/welchome29/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href="https://www.instagram.com/welchome29/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var modal = document.getElementById("contactFormModal");
+            var span = document.getElementsByClassName("close-modal")[0];
+            var currentPropertyName = '';
+
+            // Lorsque l'utilisateur clique sur le lien "En direct"
+            document.querySelectorAll('.open-contact-form').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    currentPropertyName = this.getAttribute('data-property');
+                    document.getElementById('modalTitle').textContent = 'Location - ' + currentPropertyName;
+                    document.getElementById('propertyNameField').value = currentPropertyName;
+                    modal.style.display = "block";
+
+                    $("#arrivalDate").datepicker({
+                        dateFormat: "dd/mm/yy"
+                    });
+
+                    $("#departureDate").datepicker({
+                        dateFormat: "dd/mm/yy"
+                    });
+                })
+            });
+
+            // Lorsque l'utilisateur clique sur <span> (x), fermez la modale
+            span.onclick = function() {
+                modal.style.display = "none";
+                currentPropertyName = '';
+            }
+
+            // Lorsque l'utilisateur clique en dehors de la modale, fermez-la
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                    currentPropertyName = '';
+                }
+            }
+
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                currentPropertyName = '';
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialise chaque carrousel
+            var allCarousels = document.querySelectorAll('.image-slider');
+        
+            allCarousels.forEach(function(carousel) {
+                initializeCarousel(carousel);
+            });
+        });
+    
+        function initializeCarousel(carousel) {
+            var slides = carousel.getElementsByClassName("slide");
+            var currentIndex = 0;
+            showSlides(carousel, currentIndex);
+    
+            // Trouvez les éléments de navigation dans le contexte du carrousel actuel
+            var prevButton = carousel.querySelector(".prev");
+            var nextButton = carousel.querySelector(".next");
+    
+            prevButton.addEventListener('click', function() {
+                currentIndex -= 1;
+                showSlides(carousel, currentIndex);
+            });
+    
+            nextButton.addEventListener('click', function() {
+                currentIndex += 1;
+                showSlides(carousel, currentIndex);
+            });
+    
+            function showSlides(carousel, index) {
+                if (index >= slides.length) currentIndex = 0;
+                if (index < 0) currentIndex = slides.length - 1;
+            
+                // Cachez tous les slides
+                Array.from(slides).forEach(slide => slide.style.display = "none");
+    
+                // Affichez le slide actuel
+                slides[currentIndex].style.display = "block";
+            }
+        }
+    </script>
+    <script>
+        let criteresSelectionnes = {
+            ville: new Set(),
+            capacite: new Set(),
+            pool: new Set(),
+            spa: new Set(),
+            sauna: new Set(),
+            mer: new Set(),
+            villa: new Set(),
+            appartement: new Set(),
+            bateau: new Set()
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const tousChip = document.querySelector('.chip[data-valeur="Tous"]');
+            tousChip.click();
+            // Ajout de l'écouteur d'événements à tous les chips
+            document.querySelectorAll('.chip').forEach(chip => {
+                chip.addEventListener('click', function() {
+                    const type = this.getAttribute('data-type');
+                    const valeur = this.getAttribute('data-valeur');
+      
+                    // Gestion spéciale pour le chip "Tous"
+                    if (valeur === "Tous") {
+                        criteresSelectionnes.ville.clear(); // Vider l'ensemble des critères
+                        criteresSelectionnes.capacite.clear();
+                        criteresSelectionnes.pool.clear();
+                        criteresSelectionnes.spa.clear();
+                        criteresSelectionnes.sauna.clear();
+                        criteresSelectionnes.mer.clear();
+                        criteresSelectionnes.villa.clear();
+                        criteresSelectionnes.appartement.clear();
+                        criteresSelectionnes.bateau.clear();
+                        document.querySelectorAll('.chip').forEach(c => c.classList.remove('chip-selected'));
+                        this.classList.add('chip-selected'); // Marquer "Tous" comme sélectionné
+                    } else {
+                        // Si le critère est déjà sélectionné, le retirer, sinon l'ajouter
+                        if (criteresSelectionnes[type].has(valeur)) {
+                            criteresSelectionnes[type].delete(valeur);
+                            this.classList.remove('chip-selected');
+                        } else {
+                            criteresSelectionnes[type].add(valeur);
+                            this.classList.add('chip-selected');
+                        }
+                        // Assurer que le chip "Tous" n'est pas sélectionné si d'autres critères le sont
+                        document.querySelector('.chip[data-valeur="Tous"]').classList.remove('chip-selected');
+                    }
+      
+                    filtrerCards(); // Appliquer le filtrage basé sur la sélection courante
+                });
+            });
+        });
+
+        function toggleCritere(type, valeur) {
+            const chip = document.querySelector(`.chip[data-type="${type}"][data-valeur="${valeur}"]`);
+            if (criteresSelectionnes[type].has(valeur)) {
+                criteresSelectionnes[type].delete(valeur);
+                if (chip) chip.classList.remove('chip-selected');
+            } else {
+                criteresSelectionnes[type].add(valeur);
+                if (chip) chip.classList.add('chip-selected');
+            }
+            filtrerCards(); // Mise à jour de l'affichage des cartes
+        }
+
+        function filtrerCards() {
+            let auMoinsUneCarteVisible = false;
+
+            document.querySelectorAll('.card').forEach(card => {
+                const ville = card.getAttribute('data-ville');
+                const capacite = parseInt(card.getAttribute('data-capacite'), 10);
+                const pool = card.getAttribute('data-pool');
+                const spa = card.getAttribute('data-spa');
+                const sauna = card.getAttribute('data-sauna');
+                const mer = card.getAttribute('data-mer');
+                const villa = card.getAttribute('data-villa');
+                const appartement = card.getAttribute('data-appartement');
+                const bateau = card.getAttribute('data-bateau');
+                let afficher = true;
+
+                // Filtrage par ville
+                if (criteresSelectionnes['ville'].size > 0 && !criteresSelectionnes['ville'].has(ville)) {
+                    afficher = false;
+                }
+
+                // Filtrage par capacité
+                if (criteresSelectionnes['capacite'].has('10') && capacite < 10) {
+                    afficher = false;
+                }
+
+                if (criteresSelectionnes['pool'].has('Piscine') && pool !== 'Piscine') {
+                    afficher = false;
+                }
+
+                if (criteresSelectionnes['spa'].has('Spa') && spa !== 'Spa') {
+                    afficher = false;
+                }
+
+                if (criteresSelectionnes['sauna'].has('Sauna') && sauna !== 'Sauna') {
+                    afficher = false;
+                }
+
+                if (criteresSelectionnes['mer'].has('Bord de Mer') && mer !== 'Bord de Mer') {
+                    afficher = false;
+                }
+
+                if (criteresSelectionnes['villa'].has('Villa') && villa !== 'Villa') {
+                    afficher = false;
+                }
+
+                if (criteresSelectionnes['appartement'].has('Appartement') && appartement !== 'Appartement') {
+                    afficher = false;
+                }
+
+                if (criteresSelectionnes['bateau'].has('Bateau') && bateau !== 'Bateau') {
+                    afficher = false;
+                }
+
+                card.style.display = afficher ? "" : "none";
+                if (afficher) {
+                    auMoinsUneCarteVisible = true;
+                }
+            });
+
+            document.getElementById('aucunBienDispo').style.display = auMoinsUneCarteVisible ? "none" : "block";
+        }
+    </script>
+    <script src="toggleMenu.js"></script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+</body>
+</html>

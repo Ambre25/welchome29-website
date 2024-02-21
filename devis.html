@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="swiper-bundle.min.css">
+    <meta name="description" content="Obtenez rapidement un devis pour nos services de conciergerie de résidences secondaires dans les villes de Morlaix, Saint-pol de léon, Carantec, Santec et Roscoff. Remplissez notre formulaire en ligne et notre équipe vous contactera dans les plus brefs délais">
+    <title>Devis</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="assets/logo4.png" alt="">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="conciergerie.html">Services</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="devis.html" id="active">Devis</a></li>
+            <li><a href="locataires-app/" id="btn-loc" target="_blank">Conciergerie</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <div class="main devis">
+    </div>
+    <div class="quotation">
+        <h1>Veuillez remplir tous les champs</h1>
+        <form action="https://api.web3forms.com/submit" id="form" method="POST" name="form-devis">
+            <div class="name-mail-wrapper">
+                <div class="form-item">
+                    <img src="assets/utilisateur.png" alt="">
+                    <input name="nom" type="text" class="feedback-input" placeholder="Entrez votre nom">
+                </div>
+                <div class="form-item">
+                    <img src="assets/e-mail.png" alt="">
+                    <input name="mail" type="email" class="feedback-input" placeholder="Entrez votre mail">
+                </div>
+                
+            </div>
+            <div class="cp-ville-wrapper">
+                <div class="form-item">
+                    <img src="assets/carte.png" alt="">
+                    <input id="cp" name="cp" type="text" class="feedback-input" placeholder="Code postal">
+                    <ul>
+                        <li data-vicopo="#cp, #ville" data-vicopo-click='{"#cp": "code", "#ville": "ville"}'>
+                            <strong data-vicopo-code-postal></strong>
+                            <span data-vicopo-ville></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="form-item">
+                    <img src="assets/loger.png" alt="">
+                    <input id="ville" name="ville" type="text" class="feedback-input" placeholder="Commune">
+                </div>
+            </div>
+            <div class="formule">
+                <div class="form-item choix-form">
+                    <img src="assets/bases-de-donnees.png" alt="">
+                    <p>Choisissez la formule que vous souhaitez</p>
+                    <select name="formule" id="formule">
+                        <option value="" selected>Choisissez une option</option>
+                        <option value="accueil_depart_menage">Accueil & Départ physique + Ménage</option>
+                        <option value="boite_a_clef_menage">Accueil & Départ automatisé (boîte à clefs) + Ménage</option>
+                        <option value="menage">Ménage de redressage</option>
+                    </select>
+                </div>
+            </div>
+            <div class="surface">
+                <div class="form-item surface">
+                    <img src="assets/measuring-tape.png" alt="">
+                    <p>Indiquez la surface au sol de votre bien</p>
+                    <input id="surface" name="surface" type="text" class="feedback-input" placeholder="en m²">
+                </div>
+            </div>
+            <div class="sdb-wc-wrapper">
+                <div class="form-item">
+                    <img src="assets/toilet.png" alt="">
+                    <input name="wc" type="text" class="feedback-input" placeholder="Nombre WC">
+                </div>
+                <div class="form-item">
+                    <img src="assets/shower-head.png" alt="">
+                    <input name="sdb" type="text" class="feedback-input" placeholder="Nombre Salle de bain">
+                </div>
+            </div>
+            <div class="bed">
+                <div class="form-item bed">
+                    <img src="assets/bed.png" alt="">
+                    <p>Veuillez choisir une option pour le dressage des lits</p>
+                    <select name="bed" id="bed">
+                        <option value="" selected>Choisissez une option</option>
+                        <option value="dressage_lits">Dressage des lits avant chaque séjour</option>
+                        <option value="dressage_des_lits_ponctuellement">Dressage des lits ponctuellement</option>
+                        <option value="pas_de_dressage_des_lits">Pas de dressage des lits</option>
+                    </select>
+                </div>
+            </div>
+            <div class="linge">
+                <div class="form-item linge">
+                    <img src="assets/serviette-de-bain.png" alt="">
+                    <p>Veuillez choisir une option pour la gestion du linge</p>
+                    <select name="linge" id="linge">
+                        <option value="" selected>Choisissez une option</option>
+                        <option value="nettoyage_linge">Dépôt, Nettoyage, Repassage et Récupération</option>
+                        <option value="depot_recup_linge">Dépôt et Récupération</option>
+                        <option value="pas_de_gestion_du_linge">Pas de gestion du linge</option>
+                    </select>
+                </div>
+            </div>
+            <div class="recontact">
+                <div class="form-item recontact">
+                    <img src="assets/telephone.png" alt="">
+                    <p>Quand voulez-vous être recontacté</p>
+                    <select name="recontact" id="recontact">
+                        <option value="" selected>Choisissez une option</option>
+                        <option value="matin">Matin</option>
+                        <option value="midi">Midi</option>
+                        <option value="soir">Soir</option>
+                    </select>
+                    <input name="phone" type="text" class="feedback-input" placeholder="Téléphone" id="phone">
+                </div>
+            </div>
+            <div class="comment">
+                <div class="form-item comment">
+                    <div class="comment-up">
+                        <img src="assets/commentaires.png" alt="">
+                        <p>Demande particulière</p>
+                    </div>
+                    <textarea name="comment" id="comment" placeholder="Entrez votre commentaire ici"></textarea>
+                </div>
+            </div>
+            <input type="hidden" name="redirect" value="https://welchome29.fr/thanks_devis.html">
+            <input type="hidden" name="access_key" value="a651de14-f44b-4164-99cc-3b88afa32db3">
+            <button class="sub-btn" type="submit">Envoyer</button>
+        </form>
+    </div>
+    <script src="vicopo-vanilla.min.js"></script>
+</body>
+</html>
