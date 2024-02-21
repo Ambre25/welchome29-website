@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Notre équipe de conciergerie est à votre disposition pour répondre à toutes vos demandes de réservation ou de renseignements. Contactez-nous dès maintenant pour en savoir plus sur nos services de conciergerie de résidences secondaires dans les villes de Morlaix, Carantec, Saint pol de léon, Santec et Roscoff">
+    <title>Contact</title>
+</head>
+<body class="body-contact">
+    <nav>
+        <div class="logo">
+            <img src="assets/logo4.png" alt="">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="conciergerie.html">Services</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="contact.html" id="active">Contact</a></li>
+            <li><a href="https://devis.welchome29.fr" target="_blank">Devis</a></li>
+            <li><a href="https://app.welchome29.fr" id="btn-loc" target="_blank">Boutique</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <div class="contact-container">
+            <div class="contact-form">
+                <h2>Contactez-nous</h2>
+                <form action="https://api.web3forms.com/submit" method="POST" class="custom-form" id="contact-form">
+                    <div class="name-email-container">
+                        <div class="vertical">
+                            <label for="name">Nom :</label>
+                            <input type="text" id="name" name="name" autocomplete="off">
+                        </div>
+                        <div class="vertical">
+                            <label for="email">Email :</label>
+                            <input type="email" id="email" name="email" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="object-container">
+                        <div class="vertical">
+                            <label for="object">Objet :</label>
+                            <input type="text" id="object" name="object" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="message-container">
+                        <div class="vertical">
+                            <label for="message">Message :</label>
+                            <textarea name="message" id="message"></textarea>
+                        </div>
+                    </div>
+                    <input type="hidden" name="redirect" value="https://welchome29.fr/thanks.html">
+                    <input type="hidden" name="access_key" value="a651de14-f44b-4164-99cc-3b88afa32db3">
+                    <button type="submit">
+                        Envoyer
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="toggleMenu.js"></script>
+    <script src="resetForm.js"></script>
+</body>
+</html>
